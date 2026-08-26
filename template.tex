@@ -18,9 +18,35 @@
 \usepackage{graphicx}
 \usepackage{fontspec} 
 
-% \renewcommand{\familydefault}{\sfdefault}
-\newfontfamily\dosfont{PxPlus_IBM_VGA_9x16.ttf}[Path=./]
 
+% \renewcommand{\familydefault}{\sfdefault}
+\newfontfamily\Inconsolata{Inconsolata.ttf}[
+	Path=./fonts/Inconsolata/static/,
+  	UprightFont = Inconsolata-Regular.ttf,
+  	BoldFont = Inconsolata-Bold.ttf
+]
+\newfontfamily\dosfont{PxPlus_IBM_VGA_9x16.ttf}[
+	Path=./fonts/oldschool_pc_font_pack_v2.2_FULL/ttf_Px_pixel_outline/
+]
+
+
+\setmainfont{Inconsolata}[
+	Path=./fonts/Inconsolata/static/,
+	Extension = .ttf,
+  	UprightFont = Inconsolata-Regular,
+  	BoldFont = Inconsolata-Bold
+]
+\setsansfont{Inconsolata}[
+	Path=./fonts/Inconsolata/static/,
+	Extension = .ttf,
+  	UprightFont = Inconsolata-Regular,
+  	BoldFont = Inconsolata-Bold
+]
+\setbeamerfont{title}{family=\dosfont}
+\setbeamerfont{frametitle}{family=\dosfont}
+
+
+%\renewcommand{\familydefault}{\dosfont}
 
 % ---------------------------------------------------------------------
 % Strip all of beamer's default chrome -- we draw our own.
@@ -414,10 +440,10 @@
   \begin{columns}[T]
     \begin{column}{0.40\textwidth}
       \begin{itemize}
-        \item \Large Structural Example: Definition
-        \item \Large Key Axioms \& Lemmas
-        \item \Large Theorem Application Steps
-        \item \Large Formalization Discussion
+        \item Structural Example: Definition
+        \item Key Axioms \& Lemmas
+        \item Theorem Application Steps
+        \item Formalization Discussion
       \end{itemize}
     \end{column}
     \begin{column}{0.62\textwidth}
