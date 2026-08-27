@@ -17,7 +17,8 @@
 \usepackage{helvet}
 \usepackage{graphicx}
 \usepackage{fontspec} 
-
+\usepackage[backend=biber, style=numeric]{biblatex}
+\addbibresource{references.bib} % Replace with your .bib file name
 
 % \renewcommand{\familydefault}{\sfdefault}
 \newfontfamily\Inconsolata{Inconsolata.ttf}[
@@ -639,7 +640,20 @@ end
   \mactip{Swap in your own three (or more) headline numbers.}
 \end{frame}
 
+% ---------------------------------------------------------------------
+% STYLE 7 -- Bibliography
+% ---------------------------------------------------------------------
 
+\begin{frame}[t]
+  \macslidetitle{References}
+  Just for the citations \cite{texbook}\cite{latex:companion}\cite{latex2e}\cite{knuth:1984}
+\end{frame}
+
+\begin{frame}[t]
+  \macslidetitle{References}
+  \vspace{1.2cm}
+  \printbibliography
+\end{frame}
 
 \end{document}
 
