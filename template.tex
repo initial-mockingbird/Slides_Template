@@ -399,7 +399,7 @@
 % =====================================================================
 \newcommand{\macdivider}[2]{%
   \begin{tikzpicture}[remember picture,overlay]
-    \node at (current page.center) {\macapple{0.9}};
+    \node at ($(current page.center) + (0,0.5)$) {\lambdaicon[scale=0.1]};
     \node[yshift=-2.1cm,font=\huge\bfseries] at (current page.center) {#1};
     \node[yshift=-2.9cm,font=\Large,color=black!65] at (current page.center) {#2};
   \end{tikzpicture}
