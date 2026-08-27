@@ -353,9 +353,9 @@
 %        {J. Appleseed -- Fall 2026}
 %    \end{frame}
 % =====================================================================
-\newcommand{\mactitledialog}[3]{%
+\newcommand{\mactitledialog}[4]{%
   \macdesktopicon{-5.7}{2.1}{folder}{Lectures}
-  \macdesktopicon{5.6}{2.1}{doc}{proof.lean}
+  \macdesktopicon{5.6}{2.1}{doc}{cats}
   \macdesktopicon{-5.7}{-2.3}{doc}{README}
   \macdesktopicon{5.6}{-2.3}{folder}{Exercises}
   \begin{tikzpicture}[remember picture,overlay]
@@ -370,12 +370,12 @@
         \foreach \y in {-0.08,-0.14,...,-0.47}{
           \draw[winStripe,line width=0.5pt] (0.55,\y) -- (\dw-0.55,\y);
         }
-        \node[fill=winTitle,inner sep=2pt] at (\dw/2,-0.275) {\small\bfseries About This Deck};
+        \node[fill=winTitle,inner sep=2pt] at (\dw/2,-0.275) {\small\bfseries #4};
         \draw[winBorder,line width=0.8pt,fill=white] (0.16,-0.41) rectangle (0.4,-0.15);
         % body
         \fill[winBody] (0,-\dh) rectangle (\dw,-0.55);
         \draw[winBorder,line width=1pt] (0,-\dh) rectangle (\dw,-0.55);
-        \node at (1.55,-2.1) {\macapple{0.85}};
+        \node at (1.55,-2.3) {\lambdaicon[scale=0.06]};
         \node[align=left,anchor=north west,text width=6.3cm] at (3.15,-0.95) {%
           {\LARGE\bfseries #1}\\[6pt]
           {\Large\color{black!70} #2}\\[6pt]
@@ -440,6 +440,7 @@
 \begin{frame}
   \mactitledialog{Proof Assistant Demo}{A gentle introduction to Lean}
     {J. Appleseed --- Fall 2026}
+    {\dosfont demo.exe }
 \end{frame}
 
 % ---------------------------------------------------------------------
