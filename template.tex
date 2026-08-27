@@ -162,7 +162,7 @@
 % ---------------------------------------------------------------------
 % Full-slide background: grey desktop + top menu bar with clock
 % ---------------------------------------------------------------------
-\newcommand{\slideclock}{10:30 AM}   % change per-slide if you like
+\newcommand{\slideclock}{Clase 1}   % change per-slide if you like
 
 \setbeamertemplate{background canvas}{%
   \begin{tikzpicture}[remember picture, overlay]
@@ -257,27 +257,28 @@
 \lstnewenvironment{macwindow}[2]{% #1 = title, #2 = subtitle
   \noindent
   \pgfmathsetmacro{\w}{\linewidth/1cm}%
-  \hspace*{1em}\scalebox{0.96}{
+  \pgfmathsetmacro{\pad}{0.047em}%
+  %\hspace*{1em}\scalebox{0.96}{
+  \hspace*{1em}\scalebox{1}[1]{
   \begin{tikzpicture}
     % title bar
-    \fill[winTitle] (0,0) rectangle (\w,0.55);
-    \draw[winBorder,line width=0.9pt] (0,0) rectangle (\w,0.55);
+    \filldraw[fill=winTitle,draw=winBorder,line width=0.9pt] (\pad ,0) rectangle (\w,0.55);
     \foreach \y in {0.08,0.14,...,0.47}{
-      \draw[winStripe,line width=0.5pt] (0.55,\y) -- (\w-0.55,\y);
+      \draw[winStripe,line width=0.5pt] (\pad+0.55,\y) -- (\w-0.55,\y);
     }
     \node[fill=winTitle,inner sep=2pt] at (\w/2,0.275) {\small\bfseries #1};
-    \draw[winBorder,line width=0.8pt,fill=white] (0.16,0.14) rectangle (0.4,0.4);
+    \filldraw[winBorder,line width=0.8pt,fill=white] (\pad+0.16,0.14) rectangle (\pad+0.4,0.4);
     \draw[winBorder,line width=0.8pt] (\w-0.4,0.14) rectangle (\w-0.16,0.4);
     \draw[winBorder,line width=0.8pt] (\w-0.4,0.14) -- (\w-0.16,0.4);
     \draw[winBorder,line width=0.8pt] (\w-0.16,0.14) -- (\w-0.4,0.4);
     % subtitle bar
-    \fill[winStripe] (0,-0.4) rectangle (\w,0);
-    \draw[winBorder,line width=0.7pt] (0,-0.4) rectangle (\w,0);
+    \filldraw[fill=winStripe,draw=winBorder,line width=0.7pt] (\pad,-0.4) rectangle (\w,0);
     \node at (\w/2,-0.2) {\small\bfseries #2};
   \end{tikzpicture}}\\[-0.1em]
   \noindent
   \lstset{style=macEditor,breaklines=true,breakindent=0pt,
     basicstyle=\ttfamily\scriptsize\color{codeText},
+    numbersep=5pt,xleftmargin=2.5em,   % total space reserved for the numbers column
     frame=single,rulecolor=\color{winBorder},framerule=0.9pt,tabsize=2}%
 }{%
 }
@@ -373,6 +374,9 @@
         }
         \node[fill=winTitle,inner sep=2pt] at (\dw/2,-0.275) {\small\bfseries #4};
         \draw[winBorder,line width=0.8pt,fill=white] (0.16,-0.41) rectangle (0.4,-0.15);
+        \draw[winBorder,line width=0.8pt] (\dw-0.4,-0.41) rectangle (\dw-0.16,-0.15);
+        \draw[winBorder,line width=0.8pt] (\dw-0.4,-0.41) -- (\dw-0.16,-0.15);
+        \draw[winBorder,line width=0.8pt] (\dw-0.16,-0.41) -- (\dw-0.4,-0.15);
         % body
         \fill[winBody] (0,-\dh) rectangle (\dw,-0.55);
         \draw[winBorder,line width=1pt] (0,-\dh) rectangle (\dw,-0.55);
